@@ -8,7 +8,8 @@ class WarGame_Manager(object):
         self.computer = None
     '''
     Screen 1: Start Screen
-        - 
+        - Displays the title of the program and includes a start button
+        - This button will prompt the manager to move onto the next screen.
     '''
 
 def main():
