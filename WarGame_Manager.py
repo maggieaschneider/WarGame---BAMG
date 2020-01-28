@@ -1,4 +1,8 @@
 from tkinter import *
+from screen_prepare_for_war import Screen_prepare_for_war
+from screen_pick_a_card import Screen_card_selector
+from screen_welcome_ import Screen_welcome
+from cards import CardList
 # any other
 class WarGame_Manager(object):
     def __init__(self):
@@ -6,11 +10,11 @@ class WarGame_Manager(object):
         self.screen = None
         self.player = None
         self.computer = None
-    '''
-    Screen 1: Start Screen
-        - Displays the title of the program and includes a start button
-        - This button will prompt the manager to move onto the next screen.
-    '''
+        self.current_screen = None
+
+    def start_screen(self):
+        self.root.title("Welcome to WarGame!")
+        self.current_screen = Screen_welcome()
 
    def setup_card_selector (self):
         ''' This method is called to create the card Selector screen. '''
@@ -18,7 +22,7 @@ class WarGame_Manager(object):
 
         self.current_screen = Screen_card_selector(self.root, self.card_choices, self.onclose_card_selector)
 
-    def onclose_crad_selector (self, selected_card):
+    def onclose_card_selector (self, selected_card):
         ''' This method is called when the Screen_card_selector closes.
             selected_card should contain the index in the list of the cards selected by the user.
             The method manages the assignment of the player and computer objects and then starts the
