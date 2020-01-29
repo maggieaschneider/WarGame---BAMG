@@ -15,14 +15,17 @@ class Screen_welcome(Frame):
 
     def create_widgets(self):
         '''This method creates all of the widgets for card selector page.  '''
-        Label(self, text="War - A Card Game").grid(row=0, column=0)
-        Label(self, text="Grant Lewison, Maggie Schneider, Brian Too, Abigail Oliver").grid(row=1, column=0)
-        # image goes here
-        # grid: row=2, column=0
-        Label(self, text="Click Below To Begin!").grid(row=3, column=0)
-        Button(self, text="Let's Play", command=self.continue_clicked).grid(row=4, column=0)
+        Label(self, text="").grid(row=0, column=0)
+        Label(self, text="War - A Card Game").grid(row=1, column=0)
+        Label(self, text="Grant Lewison, Maggie Schneider, Brian Too, Abigail Oliver").grid(row=2, column=0)
+        card =
+        image = PhotoImage(file="images/" + card.image)
+        a = Label(self, image=image, )
+        a.photo = image
+        a.grid(row=3, column=1)
+        Button(self, text="Let's Play", font=("Helvetica", 25),fg="red",bg="black",command=self.continue_clicked).grid(row=4, column=0)
 
 
     def continue_clicked(self):
         ''' This method is called when the Next button is clicked.  '''
-        self.call_on_selected
+        self.call_on_selected()
