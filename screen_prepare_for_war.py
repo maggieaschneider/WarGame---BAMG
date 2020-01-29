@@ -2,24 +2,36 @@ from tkinter import *
 
 
 class Screen_prepare_for_war(Frame):
-    def __init__(self, master, call_on_next):
+    def __init__(self, master, player1, player2, call_on_next):
         super(Screen_prepare_for_war, self).__init__(master)
 
-        # NOT DONE
-
-        #  return control after the player hits "Next"
+        self.player1 = player1
+        self.player2 = player2
         self.call_on_selected = call_on_next
 
         self.create_widgets()
         self.grid()
 
     def create_widgets(self):
-        '''
-        This method creates all of the widgets the prepare to battle page.
-        '''
-        # NOT DONE
+        Label(self, text = "You"
+              ).grid(row = 1, column = 0)
 
+        image = PhotoImage(file="cardBack/" + self.image)
+        p = Label(self, image=image)
+        p.photo = image
 
+        p.grid(row=2, column=0, sticky=W)
+
+        Label(self, text="Computer"
+              ).grid(row=1, column=1)
+
+        image = PhotoImage(file="cardBack/" + self.image)
+        p = Label(self, image=image)
+        p.photo = image
+
+        p.grid(row=2, column=1, sticky=W)
+
+        next_button = Button(self, text = "Click to play!", command = self.continue_clicked)
+        next_button.grid(row = 3, columnspan = 2)
     def continue_clicked(self):
-        ''' This method is called when the Next button is clicked.  '''
         self.call_on_selected(self.card.get())
