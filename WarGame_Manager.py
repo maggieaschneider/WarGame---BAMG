@@ -11,16 +11,15 @@ class WarGame_Manager(object):
         self.player = None
         self.computer = None
         self.current_screen = None
-
     def start_screen(self):
         self.root.title("Welcome to WarGame!")
         self.current_screen = Screen_welcome()
 
-   def setup_card_selector (self):
+    def setup_card_selector(self):
         ''' This method is called to create the card Selector screen. '''
         self.root.title ("Select your card!")
 
-        self.current_screen = Screen_card_selector(self.root, self.card_choices, self.onclose_card_selector)
+        self.current_screen = Screen_card_selector(self.root, self.onclose_card_selector)
 
     def onclose_card_selector (self, selected_card):
         ''' This method is called when the Screen_card_selector closes.
