@@ -69,7 +69,7 @@ class WarGame_Manager(object):
 
 def main():
     war = WarGame_Manager()
-    war.setup_card_selector()
+    war.start_screen()
     war.root.mainloop()
 
 main()
