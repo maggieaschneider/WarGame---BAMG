@@ -18,7 +18,6 @@ class Screen_welcome(Frame):
         Label(self, text="").grid(row=0, column=0)
         Label(self, text="War - A Card Game").grid(row=1, column=0)
         Label(self, text="Grant Lewison, Maggie Schneider, Brian Too, Abigail Oliver").grid(row=2, column=0)
-        card =
         image = PhotoImage(file="images/" + card.image)
         a = Label(self, image=image, )
         a.photo = image
