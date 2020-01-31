@@ -59,7 +59,10 @@ class Screen_war(Frame):
             ppoints += 1
         elif self.player1.card.value < self.player2.card.value:
             cpoints += 1
-
+        else:
+            self.tied_war()
+    def tied_war(self):
+        if self.player1.card.value == self.player2.card.value:
 
     def exit_clicked(self):
         ''' This method is called when the Exit button is clicked.  '''
