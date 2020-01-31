@@ -1,3 +1,5 @@
+
+
 class card (object):
 
     def __init__(self, image):
@@ -39,3 +41,4 @@ class CardList(object):
     def __init__(self, file_name):
         self.card_list = []
         text_file = open(file_name, "r")
+

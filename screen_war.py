@@ -15,12 +15,14 @@ class Screen_war(Frame):
         self.create_widgets()
         self.grid()
 
+    def get_random_card(self):
+
     def create_widgets(self):
         ''' This method creates all of the widgets for the battle page. '''
         Label(self, text="You"
               ).grid(row=1, column=0)
 
-        image = PhotoImage(file="cardBack/" + self.image)
+        image = PhotoImage(file="cards/" + self.get_random_card)
         p = Label(self, image=image)
         p.photo = image
 
@@ -29,7 +31,7 @@ class Screen_war(Frame):
         Label(self, text="Computer"
               ).grid(row=1, column=3)
 
-        image = PhotoImage(file="cardBack/" + self.image)
+        image = PhotoImage(file="cards/" + self.get_random_card)
         p = Label(self, image=image)
         p.photo = image
 
@@ -55,14 +57,18 @@ class Screen_war(Frame):
         ''' This method is called when the user presses the "WAR" button. '''
         ppoints = 0
         cpoints = 0
-        if self.player1.card.value > self.player2.card.value:
-            ppoints += 1
-        elif self.player1.card.value < self.player2.card.value:
-            cpoints += 1
+        if ppoints>=15 or cpoints>=15:
+            self.exit_clicked()
         else:
-            self.tied_war()
+            if self.player1.card.value > self.player2.card.value:
+                ppoints += 1
+            elif self.player1.card.value < self.player2.card.value:
+                cpoints += 1
+            else:
+                self.tied_war()
     def tied_war(self):
         if self.player1.card.value == self.player2.card.value:
+            # import a new random card
 
     def exit_clicked(self):
         ''' This method is called when the Exit button is clicked.  '''

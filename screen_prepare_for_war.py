@@ -33,5 +33,6 @@ class Screen_prepare_for_war(Frame):
 
         next_button = Button(self, text = "Click to play!", command = self.continue_clicked)
         next_button.grid(row = 3, columnspan = 2)
+
     def continue_clicked(self):
         self.call_on_selected()
