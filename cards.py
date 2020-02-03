@@ -2,13 +2,12 @@
 
 class card (object):
 
-    def __init__(self, image):
-        self.image = image
+    def __init__(self, image_name):
+        self.image = image_name
         self.value = self.findValue()
-        self.suit = self.findSuit()
 
     def findValue(self):
-        val = str(card.image)[0]
+        val = str(card.image_name)[0]
         if val == "J":
             val = 11
         elif val == "Q":
@@ -17,13 +16,7 @@ class card (object):
             val = 12
         elif val == "A":
             val = 13
-        return int(val) # STILL NEEDS TO BE PUSHED
-
-    def findSuit(self):
-        suit = str(card.image)[1]
-        # find the second letter of the name of the image and it will choose a class based on that
-        # probably best to do if statements
-        return 0 # change this to become the suit (str (letter))
+        return int(val)
 
     def war(self, enemy):
         pass
