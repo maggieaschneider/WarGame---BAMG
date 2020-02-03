@@ -18,7 +18,7 @@ class Screen_welcome(Frame):
         image = PhotoImage(file="cardBack.png")
         a = Label(self, image=image)
         a.photo = image
-        a.grid(row=3, column=1)
+        a.grid(row=3, column=0)
         Button(self, text="Let's Play", font=("Helvetica", 25),fg="red",bg="black",command=self.continue_clicked).grid(
             row=4, column=0)
 
