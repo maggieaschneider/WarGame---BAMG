@@ -1,6 +1,4 @@
-
-
-class card (object):
+class Card (object):
 
     def __init__(self, image_name):
         self.image = image_name
@@ -34,4 +32,8 @@ class CardList(object):
     def __init__(self, file_name):
         self.card_list = []
         text_file = open(file_name, "r")
-
+        for line in text_file:
+            line = line.strip()
+            stats = line.split(",")
+            card = Card(stats[0])
+            self.card_list.append(card)
