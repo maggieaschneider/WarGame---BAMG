@@ -50,8 +50,6 @@ class Screen_war(Frame):
 
         Label(self, text="Computer:"
               ).grid(row=6, column=3, sticky=W, command=self.war_clicked)
-
-
     def war_clicked(self):
         ''' This method is called when the user presses the "WAR" button. '''
         ppoints = 0

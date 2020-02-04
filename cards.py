@@ -1,30 +1,15 @@
+import random
 class Card (object):
 
-    def __init__(self, image_name):
-        self.image = image_name
-        self.value = self.findValue()
-
-    def findValue(self):
-        val = str(card.image_name)[0]
-        if val == "J":
-            val = 11
-        elif val == "Q":
-            val = 12
-        elif val == "K":
-            val = 12
-        elif val == "A":
-            val = 13
-        return int(val)
+    def __init__(self, name, value, image):
+        self.name = name
+        self.value = value
+        self.image = image
 
     def war(self, enemy):
         pass
 
-    def lost(self):
-        ''' Prints a message. '''
-        pass
-
     def __str__(self):
-        ''' Prints the stuff '''
         pass
 
 
@@ -35,5 +20,7 @@ class CardList(object):
         for line in text_file:
             line = line.strip()
             stats = line.split(",")
-            card = Card(stats[0])
+            card = Card(stats[0], stats[1], stats[2])
             self.card_list.append(card)
+    def get_random_card(self, card_list):
+        return random.choice(card_list)
