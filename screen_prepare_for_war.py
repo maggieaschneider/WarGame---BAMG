@@ -16,7 +16,7 @@ class Screen_prepare_for_war(Frame):
         Label(self, text = "You"
               ).grid(row = 1, column = 0)
 
-        image = PhotoImage(file="cardBack/" + self.image)
+        image = PhotoImage(file="cardImages/" + self.image)
         p = Label(self, image=image)
         p.photo = image
 
