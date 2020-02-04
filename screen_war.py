@@ -19,16 +19,16 @@ class Screen_war(Frame):
 
     def create_widgets(self):
         ''' This method creates all of the widgets for the battle page. '''
-        Label(self, text="You"
+        Label(self, text="You", font = "COMIC 10"
               ).grid(row=1, column=0)
 
-        image = PhotoImage(file="cards/" + self.get_random_card)
+        image = PhotoImage(file="cardImages/" + self.get_random_card)
         p = Label(self, image=image)
         p.photo = image
 
         p.grid(row=2, column=0, sticky=W)
 
-        Label(self, text="Computer"
+        Label(self, text="Computer", font = "COMIC 10"
               ).grid(row=1, column=3)
 
         image = PhotoImage(file="cards/" + self.get_random_card)
@@ -37,19 +37,19 @@ class Screen_war(Frame):
 
         p.grid(row=2, column=3, sticky=E)
 
-        next_button = Button(self, text="Click to draw", command=self.continue_clicked)
+        next_button = Button(self, text="Click to draw", font = "Helvetica 20", fg = "black", bg = "red", command=self.continue_clicked)
         next_button.grid(row=3, column=4, sticky = E)
 
         Label(self, text= ""
               ).grid(row = 4)
 
-        Label(self, text = "Points-"
+        Label(self, text = "Points-", font = "COMIC 15"
               ).grid(row = 5, columnspan = 4)
 
-        Label(self, text="You:"
+        Label(self, text="You:", font = "COMIC 7"
               ).grid(row=6, column =0, sticky = W, command = self.war_clicked)
 
-        Label(self, text="Computer:"
+        Label(self, text="Computer:", font = "COMIC 7"
               ).grid(row=6, column=3, sticky=W, command=self.war_clicked)
 
 
