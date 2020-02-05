@@ -19,7 +19,7 @@ class Screen_welcome(Frame):
         a = Label(self, image=image, )
         a.photo = image
         a.grid(row=3, column=1)
-        Button(self, text="Let's Play", font=("Helvetica", 20),fg="red",bg="black",command=self.continue_clicked).grid(row=4, column=0)
+        Button(self, text="Let's Play", font=("Helvetica", 25),fg="red",bg="black",command=self.continue_clicked).grid(row=4, column=0)
 
 
     def continue_clicked(self):

@@ -1,39 +1,15 @@
+import random
+class Card (object):
 
-
-class card (object):
-
-    def __init__(self, image):
+    def __init__(self, name, value, image):
+        self.name = name
+        self.value = value
         self.image = image
-        self.value = self.findValue()
-        self.suit = self.findSuit()
-
-    def findValue(self):
-        val = str(card.image)[0]
-        if val == "J":
-            val = 11
-        elif val == "Q":
-            val = 12
-        elif val == "K":
-            val = 12
-        elif val == "A":
-            val = 13
-        return int(val) # STILL NEEDS TO BE PUSHED
-
-    def findSuit(self):
-        suit = str(card.image)[1]
-        # find the second letter of the name of the image and it will choose a class based on that
-        # probably best to do if statements
-        return 0 # change this to become the suit (str (letter))
 
     def war(self, enemy):
         pass
 
-    def lost(self):
-        ''' Prints a message. '''
-        pass
-
     def __str__(self):
-        ''' Prints the stuff '''
         pass
 
 
@@ -41,4 +17,11 @@ class CardList(object):
     def __init__(self, file_name):
         self.card_list = []
         text_file = open(file_name, "r")
+        for line in text_file:
+            line = line.strip()
+            stats = line.split(",")
+            card = Card(stats[0], stats[1], stats[2])
+            self.card_list.append(card)
 
+    def get_random_card(self, card_list):
+        return random.choice(card_list)

@@ -14,9 +14,8 @@ class Screen_war(Frame):
         self.player2 = player2
         self.create_widgets()
         self.grid()
-
     def get_random_card(self):
-
+        return 0 # work on this
     def create_widgets(self):
         ''' This method creates all of the widgets for the battle page. '''
         Label(self, text="You", font = "COMIC 10"
@@ -51,8 +50,6 @@ class Screen_war(Frame):
 
         Label(self, text="Computer:", font = "COMIC 7"
               ).grid(row=6, column=3, sticky=W, command=self.war_clicked)
-
-
     def war_clicked(self):
         ''' This method is called when the user presses the "WAR" button. '''
         ppoints = 0
@@ -68,8 +65,7 @@ class Screen_war(Frame):
                 self.tied_war()
     def tied_war(self):
         if self.player1.card.value == self.player2.card.value:
-            # import a new random card
-
+            return 0 # import a new random card
     def exit_clicked(self):
         ''' This method is called when the Exit button is clicked.  '''
         self.call_on_selected()
