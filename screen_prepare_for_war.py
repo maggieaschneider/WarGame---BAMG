@@ -16,7 +16,7 @@ class Screen_prepare_for_war(Frame):
         Label(self, text = "You", font = "COMIC 10"
               ).grid(row = 1, column = 0)
 
-        image = PhotoImage(file="cardImages/" + self.image)
+        image = PhotoImage(file="cardBack.png")
         p = Label(self, image=image)
         p.photo = image
 
@@ -25,7 +25,7 @@ class Screen_prepare_for_war(Frame):
         Label(self, text="Computer", font = "COMIC 10"
               ).grid(row=1, column=1)
 
-        image = PhotoImage(file="cardBack/" + self.image)
+        image = PhotoImage(file="cardBack.png")
         p = Label(self, image=image)
         p.photo = image
 
@@ -33,6 +33,9 @@ class Screen_prepare_for_war(Frame):
 
         next_button = Button(self, text = "Click to play!", font = "Helvetica 20", fg = "black", bg = "red", command = self.continue_clicked)
         next_button.grid(row = 3, columnspan = 2)
+
+    def random(self):
+        ra
 
     def continue_clicked(self):
         self.call_on_selected()

@@ -21,20 +21,32 @@ class Screen_war(Frame):
         Label(self, text="You", font = "COMIC 10"
               ).grid(row=1, column=0)
 
-        image = PhotoImage(file="cardImages/" + self.get_random_card)
+        image = PhotoImage(file='cardBack.png')
         p = Label(self, image=image)
         p.photo = image
 
         p.grid(row=2, column=0, sticky=W)
 
+        image = PhotoImage(file='cardImages', command = self.random)
+        p = Label(self, image=image)
+        p.photo = image
+
+        p.grid(row=2, column=1)
+
         Label(self, text="Computer", font = "COMIC 10"
               ).grid(row=1, column=3)
 
-        image = PhotoImage(file="cards/" + self.get_random_card)
+        image = PhotoImage(file="cardBack.png")
         p = Label(self, image=image)
         p.photo = image
 
         p.grid(row=2, column=3, sticky=E)
+
+        image = PhotoImage(file='cardImages', command=self.random)
+        p = Label(self, image=image)
+        p.photo = image
+
+        p.grid(row=2, column=2)
 
         next_button = Button(self, text="Click to draw", font = "Helvetica 20", fg = "black", bg = "red", command=self.continue_clicked)
         next_button.grid(row=3, column=4, sticky = E)
