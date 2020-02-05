@@ -44,7 +44,7 @@ class WarGame_Manager(object):
         self.setup_war()
 
 
-    def setup_battle(self):
+    def setup_war(self):
         ''' This method is called to create the war screen. '''
         self.root.title ("WAR")
 
