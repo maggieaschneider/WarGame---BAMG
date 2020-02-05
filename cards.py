@@ -6,9 +6,6 @@ class Card (object):
         self.value = value
         self.image = image
 
-    def war(self, enemy):
-        pass
-
     def __str__(self):
         pass
 
@@ -25,3 +22,6 @@ class CardList(object):
 
     def get_random_card(self, card_list):
         return random.choice(card_list)
+
+    def return_list(self):
+        return self.card_list
