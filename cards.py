@@ -22,9 +22,6 @@ class CardList(object):
             card = Card(stats[0], stats[1], stats[2])
             self.card_list.append(card)
 
-    def get_random_card(self, card_list):
-        return random.choice(card_list)
-
     def shuffle(self):
         random.shuffle(self.card_list)
 
