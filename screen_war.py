@@ -38,7 +38,7 @@ class Screen_war(Frame):
         next_button = Button(self, text="Click To Draw",
                              font = "Helvetica 20", fg = "black", bg = "red", command=self.continue_clicked())
 
-        next_button.grid(row=3, column=4, sticky = E)
+        next_button.grid(row=3, column=0, columnspan=4, sticky = N)
 
         Label(self, text="").grid(row=4)
 
