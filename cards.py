@@ -1,5 +1,7 @@
 import random
-class Card (object):
+
+
+class Card(object):
 
     def __init__(self, name, value, image):
         self.name = name
@@ -22,6 +24,9 @@ class CardList(object):
 
     def get_random_card(self, card_list):
         return random.choice(card_list)
+
+    def shuffle(self):
+        random.shuffle(self.card_list)
 
     def return_list(self):
         return self.card_list

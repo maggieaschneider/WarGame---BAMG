@@ -11,7 +11,7 @@ class WarGame_Manager(object):
         self.player = None
         self.computer = None
         self.current_screen = None
-        self.card_list = CardList
+        self.card_list = CardList("cards")
     def start_screen(self):
         self.root.title("Welcome to WarGame!")
         self.current_screen = Screen_welcome(self.root, self.onclose_card_selector)
@@ -48,7 +48,7 @@ class WarGame_Manager(object):
         ''' This method is called to create the war screen. '''
         self.root.title ("WAR")
 
-        self.current_screen = Screen_war(self.root, self.computer, self.onclose_battle)
+        self.current_screen = Screen_war(self.root, self.player, self.computer, self.onclose_battle)
 
     def onclose_battle (self):
         ''' This method is called after the war is over.  This method causes the program to exit. '''
