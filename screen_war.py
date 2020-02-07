@@ -42,7 +42,7 @@ class Screen_war(Frame):
 
         Label(self, text="").grid(row=4)
 
-        Label(self, text = "Points-", font = "COMIC 15").grid(row = 5, columnspan = 4)
+        Label(self, text = "Points-", font = "COMIC 14").grid(row = 5, columnspan = 4)
 
         Label(self, text="You:", font = "COMIC 7").grid(row=6, column = 0, sticky = W)
 
@@ -60,6 +60,7 @@ class Screen_war(Frame):
                 self.p2list.append(c)
             self.deck.card_list.remove(c)
             int+=1
+        self.round()
 
     def round(self):
         p1card = self.p1list[0]
@@ -73,6 +74,8 @@ class Screen_war(Frame):
         p2 = Label(self, image=image)
         p2.photo = image
         p2.grid(row=2, column=2)
+
+
 
     def tied_war(self):
         # Still needs to be worked on
