@@ -5,9 +5,6 @@ class Screen_war(Frame):
     def __init__(self, master, call_on_next, player1, player2):
         super(Screen_war, self).__init__(master)
 
-        # Save references to the card objects
-        # NOT DONE
-
         # Save the method reference to which we return control after this page Exits.
         self.call_on_selected = call_on_next
         self.player1 = player1
@@ -44,9 +41,11 @@ class Screen_war(Frame):
 
         Label(self, text = "Points-", font = "COMIC 14").grid(row = 5, columnspan = 4)
 
-        Label(self, text="You:", font = "COMIC 7").grid(row=6, column = 0, sticky = W)
+        self.ppoint_label = Label(self, text="You:", font = "COMIC 7")
+        self.ppoint_label.grid(row=6, column = 0, sticky = W)
 
-        Label(self, text="Computer:", font = "COMIC 7").grid(row=6, column=3, sticky=W)
+        self.cpoint_label = Label(self, text="Computer:", font = "COMIC 7")
+        self.cpoint_label.grid(row=6, column=3, sticky=W)
 
     def continue_clicked(self):
         self.deck.shuffle()
