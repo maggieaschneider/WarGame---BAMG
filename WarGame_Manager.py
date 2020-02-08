@@ -2,7 +2,9 @@ from tkinter import *
 from screen_prepare_for_war import Screen_prepare_for_war
 from screen_war import Screen_war
 from screen_welcome_ import Screen_welcome
+from screen_end import Screen_End
 from cards import CardList
+
 # any other
 class WarGame_Manager(object):
     def __init__(self):
@@ -48,10 +50,14 @@ class WarGame_Manager(object):
         ''' This method is called to create the war screen. '''
         self.root.title ("WAR")
 
-        self.current_screen = Screen_war(self.root, self.onclose_battle, self.player, self.computer)
+        self.current_screen = Screen_war(self.root, self.player, self.computer, self.onclose_battle)
 
     def onclose_battle (self):
         ''' This method is called after the war is over.  This method causes the program to exit. '''
+        self.current_screen.destroy()
+        self.current_screen = Screen_End(self.root, self.onclose_end)
+
+    def onclose_end(self):
         self.root.destroy()
 
 def main():

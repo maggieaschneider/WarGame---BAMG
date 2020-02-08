@@ -34,8 +34,5 @@ class Screen_prepare_for_war(Frame):
         next_button = Button(self, text = "Click to play!", font = "Helvetica 20", fg = "red", bg = "black", command = self.continue_clicked)
         next_button.grid(row = 3, columnspan = 2)
 
-    def random(self):
-        ra
-
     def continue_clicked(self):
         self.call_on_selected()
