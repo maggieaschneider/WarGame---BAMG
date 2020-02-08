@@ -50,11 +50,12 @@ class WarGame_Manager(object):
         ''' This method is called to create the war screen. '''
         self.root.title ("WAR")
 
-        self.current_screen = Screen_war(self.root, self.player, self.computer, self.onclose_battle)
+        self.current_screen = Screen_war(self.root, self.onclose_battle, self.player, self.computer)
 
-    def onclose_battle (self):
+    def onclose_battle(self):
         ''' This method is called after the war is over.  This method causes the program to exit. '''
         self.current_screen.destroy()
+        self.root.title("Thanks for Playing!")
         self.current_screen = Screen_End(self.root, self.onclose_end)
 
     def onclose_end(self):

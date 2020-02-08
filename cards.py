@@ -24,6 +24,3 @@ class CardList(object):
 
     def shuffle(self):
         random.shuffle(self.card_list)
-
-    def return_list(self):
-        return self.card_list
