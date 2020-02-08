@@ -1,6 +1,7 @@
 from tkinter import *
 import random
 from cards import Card, CardList
+from screen_end import Screen_End
 class Screen_war(Frame):
     def __init__(self, master, call_on_next, player1, player2):
         super(Screen_war, self).__init__(master)
@@ -48,6 +49,9 @@ class Screen_war(Frame):
 
         Label(self, text="Computer:", font = "COMIC 7").grid(row=6, column=3, sticky=W)
 
+        doneplaying = Button(self, text = "Done Playing" , font = "COMIC 7", command = self.next)
+        doneplaying.grid(row = 7, column = 4, sticky = E)
+
     def continue_clicked(self):
         self.deck.shuffle()
         self.p1list = []
@@ -78,6 +82,6 @@ class Screen_war(Frame):
         # Still needs to be worked on
         return 0
 
-    def exit_clicked(self):
-        ''' This method is called when the Exit button is clicked.  '''
+    def next(self):
+        ''' This method is called when the Next button is clicked.  '''
         self.call_on_selected()
