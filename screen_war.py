@@ -12,6 +12,8 @@ class Screen_war(Frame):
         self.deck = CardList("cards")
         self.create_widgets()
         self.grid()
+        self.ppoints = 0
+        self.cpoints = 0
 
     def create_widgets(self):
         ''' This method creates all of the widgets for the battle page. '''
@@ -41,10 +43,10 @@ class Screen_war(Frame):
 
         Label(self, text = "Points-", font = "COMIC 14").grid(row = 5, columnspan = 4)
 
-        self.ppoint_label = Label(self, text="You:", font = "COMIC 7")
+        self.ppoint_label = Label(self, text="You:", font = "COMIC 10")
         self.ppoint_label.grid(row=6, column = 0, sticky = W)
 
-        self.cpoint_label = Label(self, text="Computer:", font = "COMIC 7")
+        self.cpoint_label = Label(self, text="Computer:", font = "COMIC 10")
         self.cpoint_label.grid(row=6, column=3, sticky=W)
 
     def continue_clicked(self):
@@ -74,7 +76,21 @@ class Screen_war(Frame):
         p2.photo = image
         p2.grid(row=2, column=2)
 
-
+        if p1card.value > p2card.value:
+            self.ppoints += 1
+            self.ppoint_label['text'] = "You:", self.ppoints
+        elif p1card.value < p2card.value:
+            self.cpoints += 1
+            self.cpoint_label['text'] = "Computer:", self.cpoints
+        else:
+            self.tied_war()
+        if self.ppoints >= 15 or self.cpoints >= 15:
+            self.exit_clicked()
+        # Determine Winner
+        # in previous timeline: find this
+        # compare p1.value with p2.value
+        # use self.ppoints_label['text'] = points,...
+        # may need if statement to determine whether the game is over
 
     def tied_war(self):
         # Still needs to be worked on
