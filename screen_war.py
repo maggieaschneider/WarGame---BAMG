@@ -1,6 +1,5 @@
 from tkinter import *
-import random
-from cards import Card, CardList
+from cards import CardList
 class Screen_war(Frame):
     def __init__(self, master, call_on_next, player1, player2):
         super(Screen_war, self).__init__(master)
@@ -53,12 +52,12 @@ class Screen_war(Frame):
 
         Label(self, text="").grid(row=4)
 
-        Label(self, text = "Points-", font = "COMIC 14").grid(row = 5, columnspan = 4)
+        Label(self, text = "Points:", font = "COMIC 14").grid(row = 5, columnspan = 4)
 
-        self.ppoint_label = Label(self, text="You:", font = "COMIC 10")
+        self.ppoint_label = Label(self, text="You:", font = "COMIC 15")
         self.ppoint_label.grid(row=6, column = 0, sticky = W)
 
-        self.cpoint_label = Label(self, text="Computer:", font = "COMIC 10")
+        self.cpoint_label = Label(self, text="Computer:", font = "COMIC 15")
         self.cpoint_label.grid(row=6, column=3, sticky=W)
 
     def round(self):
@@ -94,9 +93,7 @@ class Screen_war(Frame):
             self.p2list.remove(p2card)
             self.p2list.append(p2card)
 
-        if self.ppoints >= 15 or self.cpoints >= 15:
-            self.exit_clicked()
-
-    def exit_clicked(self):
-        ''' This method is called when the Exit button is clicked.  '''
-        self.call_on_selected()
+        if self.ppoints >= 15:
+            self.call_on_selected("p")
+        if self.cpoints >= 15:
+            self.call_on_selected("c")
