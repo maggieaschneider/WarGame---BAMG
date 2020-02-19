@@ -101,9 +101,11 @@ class Screen_war(Frame):
                 self.p1list.remove(self.p1card)
                 self.p2list.append(self.p1card)
             else:
-                self.tie()
                 self.master.update()
                 time.sleep(2)
+                self.tie()
+                self.master.update()
+                time.sleep(1.5)
                 self.p1.destroy()
                 self.p2.destroy()
                 self.p3.destroy()
@@ -112,11 +114,13 @@ class Screen_war(Frame):
                 self.p6.destroy()
                 self.p7.destroy()
                 self.p8.destroy()
-        if self.ppoints >= 15:
-            time.sleep(0.5)
+        if self.ppoints >= 12:
+            self.master.update()
+            time.sleep(1.25)
             self.call_on_selected("p")
-        if self.cpoints >= 15:
-            time.sleep(0.5)
+        if self.cpoints >= 12:
+            self.master.update()
+            time.sleep(1.25)
             self.call_on_selected("c")
     def tie(self):
 
@@ -178,9 +182,11 @@ class Screen_war(Frame):
             self.p8 = Label(self, image=image)
             self.p8.photo = image
             self.p8.grid(row=3, column=3)
-            time.sleep(0.5)
+
             if p1cM.value > p2cM.value:
                 self.ppoints += 4
+                self.master.update()
+                time.sleep(0.5)
                 self.ppoint_label['text'] = "You:", self.ppoints
                 self.p1list.append(p1c1)
                 self.p1list.append(p1c2)
@@ -192,6 +198,8 @@ class Screen_war(Frame):
                 self.p1list.append(p2cM)
             elif p1cM.value < p2cM.value:
                 self.cpoints += 4
+                self.master.update()
+                time.sleep(0.5)
                 self.cpoint_label['text'] = "Computer:", self.cpoints
                 self.p2list.append(p1c1)
                 self.p2list.append(p1c2)
