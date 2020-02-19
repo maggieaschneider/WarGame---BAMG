@@ -186,7 +186,7 @@ class Screen_war(Frame):
             if p1cM.value > p2cM.value:
                 self.ppoints += 4
                 self.master.update()
-                time.sleep(0.5)
+                time.sleep(1)
                 self.ppoint_label['text'] = "You:", self.ppoints
                 self.p1list.append(p1c1)
                 self.p1list.append(p1c2)
@@ -199,7 +199,7 @@ class Screen_war(Frame):
             elif p1cM.value < p2cM.value:
                 self.cpoints += 4
                 self.master.update()
-                time.sleep(0.5)
+                time.sleep(1)
                 self.cpoint_label['text'] = "Computer:", self.cpoints
                 self.p2list.append(p1c1)
                 self.p2list.append(p1c2)
